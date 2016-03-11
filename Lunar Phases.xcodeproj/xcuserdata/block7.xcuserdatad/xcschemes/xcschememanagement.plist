@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Lunar Phases Today Widget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Lunar Phases.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C19AD95D1C9351CA00037664</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1FD564C1C7F7A9B00A55B4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1FD56601C7F7A9B00A55B4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1FD566B1C7F7A9B00A55B4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

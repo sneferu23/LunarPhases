@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C19AD9611C9351CA00037664 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19AD9601C9351CA00037664 /* NotificationCenter.framework */; };
+		C19AD9641C9351CA00037664 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19AD9631C9351CA00037664 /* TodayViewController.swift */; };
+		C19AD9671C9351CA00037664 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C19AD9651C9351CA00037664 /* MainInterface.storyboard */; };
+		C19AD96B1C9351CA00037664 /* Lunar Phases Today Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C19AD95E1C9351CA00037664 /* Lunar Phases Today Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C1FD56511C7F7A9B00A55B4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD56501C7F7A9B00A55B4D /* AppDelegate.swift */; };
+		C1FD56531C7F7A9B00A55B4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD56521C7F7A9B00A55B4D /* ViewController.swift */; };
+		C1FD56561C7F7A9B00A55B4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FD56541C7F7A9B00A55B4D /* Main.storyboard */; };
+		C1FD56581C7F7A9B00A55B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FD56571C7F7A9B00A55B4D /* Assets.xcassets */; };
+		C1FD565B1C7F7A9B00A55B4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FD56591C7F7A9B00A55B4D /* LaunchScreen.storyboard */; };
+		C1FD56661C7F7A9B00A55B4D /* Lunar_PhasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD56651C7F7A9B00A55B4D /* Lunar_PhasesTests.swift */; };
+		C1FD56711C7F7A9B00A55B4D /* Lunar_PhasesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD56701C7F7A9B00A55B4D /* Lunar_PhasesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C19AD9691C9351CA00037664 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1FD56451C7F7A9B00A55B4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C19AD95D1C9351CA00037664;
+			remoteInfo = "Lunar Phases Today Widget";
+		};
+		C1FD56621C7F7A9B00A55B4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1FD56451C7F7A9B00A55B4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1FD564C1C7F7A9B00A55B4D;
+			remoteInfo = "Lunar Phases";
+		};
+		C1FD566D1C7F7A9B00A55B4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1FD56451C7F7A9B00A55B4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1FD564C1C7F7A9B00A55B4D;
+			remoteInfo = "Lunar Phases";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C19AD96F1C9351CA00037664 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C19AD96B1C9351CA00037664 /* Lunar Phases Today Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C19AD95E1C9351CA00037664 /* Lunar Phases Today Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Lunar Phases Today Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C19AD9601C9351CA00037664 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C19AD9631C9351CA00037664 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C19AD9661C9351CA00037664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C19AD9681C9351CA00037664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FD564D1C7F7A9B00A55B4D /* Lunar Phases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lunar Phases.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FD56501C7F7A9B00A55B4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C1FD56521C7F7A9B00A55B4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1FD56551C7F7A9B00A55B4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1FD56571C7F7A9B00A55B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1FD565A1C7F7A9B00A55B4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1FD565C1C7F7A9B00A55B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FD56611C7F7A9B00A55B4D /* Lunar PhasesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lunar PhasesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FD56651C7F7A9B00A55B4D /* Lunar_PhasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunar_PhasesTests.swift; sourceTree = "<group>"; };
+		C1FD56671C7F7A9B00A55B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FD566C1C7F7A9B00A55B4D /* Lunar PhasesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lunar PhasesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1FD56701C7F7A9B00A55B4D /* Lunar_PhasesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lunar_PhasesUITests.swift; sourceTree = "<group>"; };
+		C1FD56721C7F7A9B00A55B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C19AD95B1C9351CA00037664 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C19AD9611C9351CA00037664 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD564A1C7F7A9B00A55B4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD565E1C7F7A9B00A55B4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD56691C7F7A9B00A55B4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C19AD95F1C9351CA00037664 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C19AD9601C9351CA00037664 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C19AD9621C9351CA00037664 /* Lunar Phases Today Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C19AD9631C9351CA00037664 /* TodayViewController.swift */,
+				C19AD9651C9351CA00037664 /* MainInterface.storyboard */,
+				C19AD9681C9351CA00037664 /* Info.plist */,
+			);
+			path = "Lunar Phases Today Widget";
+			sourceTree = "<group>";
+		};
+		C1FD56441C7F7A9B00A55B4D = {
+			isa = PBXGroup;
+			children = (
+				C1FD564F1C7F7A9B00A55B4D /* Lunar Phases */,
+				C1FD56641C7F7A9B00A55B4D /* Lunar PhasesTests */,
+				C1FD566F1C7F7A9B00A55B4D /* Lunar PhasesUITests */,
+				C19AD9621C9351CA00037664 /* Lunar Phases Today Widget */,
+				C19AD95F1C9351CA00037664 /* Frameworks */,
+				C1FD564E1C7F7A9B00A55B4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1FD564E1C7F7A9B00A55B4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1FD564D1C7F7A9B00A55B4D /* Lunar Phases.app */,
+				C1FD56611C7F7A9B00A55B4D /* Lunar PhasesTests.xctest */,
+				C1FD566C1C7F7A9B00A55B4D /* Lunar PhasesUITests.xctest */,
+				C19AD95E1C9351CA00037664 /* Lunar Phases Today Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1FD564F1C7F7A9B00A55B4D /* Lunar Phases */ = {
+			isa = PBXGroup;
+			children = (
+				C1FD56501C7F7A9B00A55B4D /* AppDelegate.swift */,
+				C1FD56521C7F7A9B00A55B4D /* ViewController.swift */,
+				C1FD56541C7F7A9B00A55B4D /* Main.storyboard */,
+				C1FD56571C7F7A9B00A55B4D /* Assets.xcassets */,
+				C1FD56591C7F7A9B00A55B4D /* LaunchScreen.storyboard */,
+				C1FD565C1C7F7A9B00A55B4D /* Info.plist */,
+			);
+			path = "Lunar Phases";
+			sourceTree = "<group>";
+		};
+		C1FD56641C7F7A9B00A55B4D /* Lunar PhasesTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1FD56651C7F7A9B00A55B4D /* Lunar_PhasesTests.swift */,
+				C1FD56671C7F7A9B00A55B4D /* Info.plist */,
+			);
+			path = "Lunar PhasesTests";
+			sourceTree = "<group>";
+		};
+		C1FD566F1C7F7A9B00A55B4D /* Lunar PhasesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C1FD56701C7F7A9B00A55B4D /* Lunar_PhasesUITests.swift */,
+				C1FD56721C7F7A9B00A55B4D /* Info.plist */,
+			);
+			path = "Lunar PhasesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C19AD95D1C9351CA00037664 /* Lunar Phases Today Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C19AD96E1C9351CA00037664 /* Build configuration list for PBXNativeTarget "Lunar Phases Today Widget" */;
+			buildPhases = (
+				C19AD95A1C9351CA00037664 /* Sources */,
+				C19AD95B1C9351CA00037664 /* Frameworks */,
+				C19AD95C1C9351CA00037664 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lunar Phases Today Widget";
+			productName = "Lunar Phases Today Widget";
+			productReference = C19AD95E1C9351CA00037664 /* Lunar Phases Today Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C1FD564C1C7F7A9B00A55B4D /* Lunar Phases */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1FD56751C7F7A9B00A55B4D /* Build configuration list for PBXNativeTarget "Lunar Phases" */;
+			buildPhases = (
+				C1FD56491C7F7A9B00A55B4D /* Sources */,
+				C1FD564A1C7F7A9B00A55B4D /* Frameworks */,
+				C1FD564B1C7F7A9B00A55B4D /* Resources */,
+				C19AD96F1C9351CA00037664 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C19AD96A1C9351CA00037664 /* PBXTargetDependency */,
+			);
+			name = "Lunar Phases";
+			productName = "Lunar Phases";
+			productReference = C1FD564D1C7F7A9B00A55B4D /* Lunar Phases.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1FD56601C7F7A9B00A55B4D /* Lunar PhasesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1FD56781C7F7A9B00A55B4D /* Build configuration list for PBXNativeTarget "Lunar PhasesTests" */;
+			buildPhases = (
+				C1FD565D1C7F7A9B00A55B4D /* Sources */,
+				C1FD565E1C7F7A9B00A55B4D /* Frameworks */,
+				C1FD565F1C7F7A9B00A55B4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1FD56631C7F7A9B00A55B4D /* PBXTargetDependency */,
+			);
+			name = "Lunar PhasesTests";
+			productName = "Lunar PhasesTests";
+			productReference = C1FD56611C7F7A9B00A55B4D /* Lunar PhasesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C1FD566B1C7F7A9B00A55B4D /* Lunar PhasesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1FD567B1C7F7A9B00A55B4D /* Build configuration list for PBXNativeTarget "Lunar PhasesUITests" */;
+			buildPhases = (
+				C1FD56681C7F7A9B00A55B4D /* Sources */,
+				C1FD56691C7F7A9B00A55B4D /* Frameworks */,
+				C1FD566A1C7F7A9B00A55B4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1FD566E1C7F7A9B00A55B4D /* PBXTargetDependency */,
+			);
+			name = "Lunar PhasesUITests";
+			productName = "Lunar PhasesUITests";
+			productReference = C1FD566C1C7F7A9B00A55B4D /* Lunar PhasesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1FD56451C7F7A9B00A55B4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = block7;
+				TargetAttributes = {
+					C19AD95D1C9351CA00037664 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 76JFQAA68J;
+					};
+					C1FD564C1C7F7A9B00A55B4D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 76JFQAA68J;
+					};
+					C1FD56601C7F7A9B00A55B4D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 76JFQAA68J;
+						TestTargetID = C1FD564C1C7F7A9B00A55B4D;
+					};
+					C1FD566B1C7F7A9B00A55B4D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 76JFQAA68J;
+						TestTargetID = C1FD564C1C7F7A9B00A55B4D;
+					};
+				};
+			};
+			buildConfigurationList = C1FD56481C7F7A9B00A55B4D /* Build configuration list for PBXProject "Lunar Phases" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1FD56441C7F7A9B00A55B4D;
+			productRefGroup = C1FD564E1C7F7A9B00A55B4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1FD564C1C7F7A9B00A55B4D /* Lunar Phases */,
+				C1FD56601C7F7A9B00A55B4D /* Lunar PhasesTests */,
+				C1FD566B1C7F7A9B00A55B4D /* Lunar PhasesUITests */,
+				C19AD95D1C9351CA00037664 /* Lunar Phases Today Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C19AD95C1C9351CA00037664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C19AD9671C9351CA00037664 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD564B1C7F7A9B00A55B4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1FD565B1C7F7A9B00A55B4D /* LaunchScreen.storyboard in Resources */,
+				C1FD56581C7F7A9B00A55B4D /* Assets.xcassets in Resources */,
+				C1FD56561C7F7A9B00A55B4D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD565F1C7F7A9B00A55B4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD566A1C7F7A9B00A55B4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C19AD95A1C9351CA00037664 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C19AD9641C9351CA00037664 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD56491C7F7A9B00A55B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1FD56531C7F7A9B00A55B4D /* ViewController.swift in Sources */,
+				C1FD56511C7F7A9B00A55B4D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD565D1C7F7A9B00A55B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1FD56661C7F7A9B00A55B4D /* Lunar_PhasesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1FD56681C7F7A9B00A55B4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1FD56711C7F7A9B00A55B4D /* Lunar_PhasesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C19AD96A1C9351CA00037664 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C19AD95D1C9351CA00037664 /* Lunar Phases Today Widget */;
+			targetProxy = C19AD9691C9351CA00037664 /* PBXContainerItemProxy */;
+		};
+		C1FD56631C7F7A9B00A55B4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1FD564C1C7F7A9B00A55B4D /* Lunar Phases */;
+			targetProxy = C1FD56621C7F7A9B00A55B4D /* PBXContainerItemProxy */;
+		};
+		C1FD566E1C7F7A9B00A55B4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1FD564C1C7F7A9B00A55B4D /* Lunar Phases */;
+			targetProxy = C1FD566D1C7F7A9B00A55B4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C19AD9651C9351CA00037664 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C19AD9661C9351CA00037664 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		C1FD56541C7F7A9B00A55B4D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1FD56551C7F7A9B00A55B4D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C1FD56591C7F7A9B00A55B4D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1FD565A1C7F7A9B00A55B4D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C19AD96C1C9351CA00037664 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Lunar Phases Today Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-Phases.Lunar-Phases-Today-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C19AD96D1C9351CA00037664 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Lunar Phases Today Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-Phases.Lunar-Phases-Today-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C1FD56731C7F7A9B00A55B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1FD56741C7F7A9B00A55B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1FD56761C7F7A9B00A55B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "Lunar Phases/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-Phases";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C1FD56771C7F7A9B00A55B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "Lunar Phases/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-Phases";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C1FD56791C7F7A9B00A55B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Lunar PhasesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-PhasesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lunar Phases.app/Lunar Phases";
+			};
+			name = Debug;
+		};
+		C1FD567A1C7F7A9B00A55B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Lunar PhasesTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-PhasesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lunar Phases.app/Lunar Phases";
+			};
+			name = Release;
+		};
+		C1FD567C1C7F7A9B00A55B4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Lunar PhasesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-PhasesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Lunar Phases";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		C1FD567D1C7F7A9B00A55B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Lunar PhasesUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-PhasesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Lunar Phases";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C19AD96E1C9351CA00037664 /* Build configuration list for PBXNativeTarget "Lunar Phases Today Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C19AD96C1C9351CA00037664 /* Debug */,
+				C19AD96D1C9351CA00037664 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C1FD56481C7F7A9B00A55B4D /* Build configuration list for PBXProject "Lunar Phases" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1FD56731C7F7A9B00A55B4D /* Debug */,
+				C1FD56741C7F7A9B00A55B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1FD56751C7F7A9B00A55B4D /* Build configuration list for PBXNativeTarget "Lunar Phases" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1FD56761C7F7A9B00A55B4D /* Debug */,
+				C1FD56771C7F7A9B00A55B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1FD56781C7F7A9B00A55B4D /* Build configuration list for PBXNativeTarget "Lunar PhasesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1FD56791C7F7A9B00A55B4D /* Debug */,
+				C1FD567A1C7F7A9B00A55B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1FD567B1C7F7A9B00A55B4D /* Build configuration list for PBXNativeTarget "Lunar PhasesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1FD567C1C7F7A9B00A55B4D /* Debug */,
+				C1FD567D1C7F7A9B00A55B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1FD56451C7F7A9B00A55B4D /* Project object */;
+}

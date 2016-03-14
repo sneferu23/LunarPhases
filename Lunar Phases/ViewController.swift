@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var lunarPhaseImageView: UIImageView!
     @IBOutlet weak var dispLabel: UILabel!
+    @IBOutlet weak var dispLocation: UILabel!
     var currentlunarphase = ""
     var currentfracillum = ""
     var currentfracillumimage = ""
+    var currenttemp = ""
+    let manager = CLLocationManager()
+    
+    
     
     func getDateString() -> String {
         
@@ -55,7 +62,7 @@ class ViewController: UIViewController {
     }
     
     
-    func getSolarData() {
+    func getLunarImage() {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://api.usno.navy.mil/imagery/moon.png?&date=\(getDateString())&time=5:13")!)
         
         let session = NSURLSession.sharedSession()
@@ -73,10 +80,51 @@ class ViewController: UIViewController {
         task.resume()
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Found user's location: \(location)")
+            self.dispLocation.text = "\(location)"
+        }
+       
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
+    
+    
+    
+    func getWeatherData() {
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b1b15e88fa797225412429c1c50c122a")!)
+        
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithRequest(request) {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            
+            do {
+                self.currenttemp = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) ["temp"] as! String
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.dispLocation.text = self.currenttemp
+                }
+            } catch {
+                let alert = UIAlertController(title: "you suck at coding", message: "you really really do", preferredStyle: UIAlertControllerStyle.Alert)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+        
+         task.resume()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getLunarData()
-        getSolarData()
+        getLunarImage()
+        manager.delegate = self
+        manager.requestLocation()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {

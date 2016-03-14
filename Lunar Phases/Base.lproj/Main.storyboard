@@ -26,12 +26,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eft-AO-nb2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOK-jT-IxQ">
+                                <rect key="frame" x="35" y="453" width="258" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.66666666666666663" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dispLabel" destination="awP-9k-zMh" id="LrF-6M-Ehh"/>
+                        <outlet property="dispLocation" destination="aOK-jT-IxQ" id="wux-mQ-NVV"/>
                         <outlet property="lunarPhaseImageView" destination="Eft-AO-nb2" id="Zrh-bX-9Pf"/>
                     </connections>
                 </viewController>

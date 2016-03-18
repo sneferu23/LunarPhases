@@ -612,6 +612,7 @@
 				C19AD96D1C9351CA00037664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C1FD56481C7F7A9B00A55B4D /* Build configuration list for PBXProject "Lunar Phases" */ = {
 			isa = XCConfigurationList;

@@ -19,9 +19,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var currentfracillum = ""
     var currentfracillumimage = ""
     var currenttemp = ""
-    let manager = CLLocationManager()
-    
-    
+    var locManager = CLLocationCoordinate2D()
+    let locationManager = CLLocationManager()
+    var latitude: CLLocationDegrees = 0.0
+    var longitude: CLLocationDegrees = 0.0
     
     func getDateString() -> String {
         
@@ -52,7 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
             } catch {
-                let alert = UIAlertController(title: "you suck at coding", message: "you really really do", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Try Harder", preferredStyle: UIAlertControllerStyle.Alert)
                 self.presentViewController(alert, animated: true, completion: nil)
             }
     
@@ -63,7 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func getLunarImage() {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.usno.navy.mil/imagery/moon.png?&date=\(getDateString())&time=5:13")!)
+         let request = NSMutableURLRequest(URL: NSURL(string: "http://api.usno.navy.mil/imagery/moon.png?&date=\(getDateString())&time=5:13")!)
         
         let session = NSURLSession.sharedSession()
         
@@ -81,17 +82,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            print("Found user's location: \(location)")
-            self.dispLocation.text = "\(location)"
-        }
-       
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        self.dispLocation.text = "locations = \(locValue.latitude) \(locValue.longitude)"
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        self.dispLocation.text = "Failed to retrieve your location"
         print("Failed to find user's location: \(error.localizedDescription)")
+
     }
-    
+
     
     
     
@@ -110,7 +112,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     self.dispLocation.text = self.currenttemp
                 }
             } catch {
-                let alert = UIAlertController(title: "you suck at coding", message: "you really really do", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "You're bad", preferredStyle: UIAlertControllerStyle.Alert)
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
@@ -123,8 +125,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         getLunarData()
         getLunarImage()
-        manager.delegate = self
-        manager.requestLocation()
+        locationManager.requestAlwaysAuthorization()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {

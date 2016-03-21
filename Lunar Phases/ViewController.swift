@@ -86,6 +86,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let locValue:CLLocationCoordinate2D = manager.location!.coordinate
             self.dispLocation.text = "locations = \(locValue.latitude) \(locValue.longitude)"
             print("location = \(locValue.latitude) \(locValue.longitude)")
+            print(locValue.latitude)
+            print(locValue.longitude)
+            return "lat=\(locValue.latitude)&lon=\(locValue.longitude)"
         }
     }
 
@@ -99,7 +102,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func getWeatherData() {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b1b15e88fa797225412429c1c50c122a")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?\(locationManager())&appid=b1b15e88fa797225412429c1c50c122a")!)
         
         let session = NSURLSession.sharedSession()
         

@@ -20,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var currentfracillumimage = ""
     var currenttemp = ""
     var locManager = CLLocationCoordinate2D()
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     var latitude: CLLocationDegrees = 0.0
     var longitude: CLLocationDegrees = 0.0
     
@@ -81,11 +81,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         task.resume()
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        self.dispLocation.text = "locations = \(locValue.latitude) \(locValue.longitude)"
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedAlways {
+            let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+            self.dispLocation.text = "locations = \(locValue.latitude) \(locValue.longitude)"
+            print("location = \(locValue.latitude) \(locValue.longitude)")
+        }
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -125,6 +126,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         getLunarData()
         getLunarImage()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         // Do any additional setup after loading the view, typically from a nib.
     }

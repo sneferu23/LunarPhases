@@ -46,8 +46,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
            
             do {
-                self.currentfracillum = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["fracillum"] as! String
-                self.currentlunarphase = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["curphase"] as! String
+                print(try NSJSONSerialization.JSONObjectWithData(data!, options: []))
+                //self.currentfracillum = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)["fracillum"] as! String
+                //OUTself.currentlunarphase = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)["curphase"] as! String
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.dispLabel.text = "\(self.currentfracillum) illumination, \(self.currentlunarphase)"
@@ -107,12 +108,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let task = session.dataTaskWithRequest(request) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            
             do {
-                self.currenttemp = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) ["temp"] as! String
+                //OUTself.currenttemp = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) ["temp"] as! String
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.dispLocation.text = self.currenttemp
+                    self.dispLocation.text = self.currenttemp// * (9/5) - 459
                 }
             } catch {
                 let alert = UIAlertController(title: "Error", message: "You're bad", preferredStyle: UIAlertControllerStyle.Alert)
@@ -128,6 +128,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         getLunarData()
         getLunarImage()
+        getWeatherData()
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()

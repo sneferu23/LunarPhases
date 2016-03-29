@@ -23,8 +23,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var latitude: CLLocationDegrees = 0.0
     var longitude: CLLocationDegrees = 0.0
-    var lat = ""
-    var lon = ""
+    var lat: Double = 0
+    var lon: Double = 0
+    var tempdata = ""
     
     func getDateString() -> String {
         
@@ -46,9 +47,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
            
             do {
-                print(try NSJSONSerialization.JSONObjectWithData(data!, options: []))
-                //self.currentfracillum = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)["fracillum"] as! String
-                //OUTself.currentlunarphase = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)["curphase"] as! String
+                self.currentfracillum = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["fracillum"] as! String
+                self.currentlunarphase = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["curphase"] as! String
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.dispLabel.text = "\(self.currentfracillum) illumination, \(self.currentlunarphase)"
@@ -83,14 +83,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         task.resume()
     }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedAlways {
-            let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-            lat = String(locValue.latitude)
-            lon = String(locValue.longitude)
-        }
-    }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         self.dispLocation.text = "Failed to retrieve your location"
@@ -99,17 +91,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     
-    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.count > 0 {
+            lat = locations[0].coordinate.latitude
+            lon = locations[0].coordinate.longitude
+            
+            getWeatherData()
+        } else {
+            print("No locations")
+        }
+    }
     
     func getWeatherData() {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=b1b15e88fa797225412429c1c50c122a")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&APPID=82958a04ea128e90f026bf54f107e577")!)
         
         let session = NSURLSession.sharedSession()
         
         let task = session.dataTaskWithRequest(request) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             do {
-                //OUTself.currenttemp = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) ["temp"] as! String
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                self.currenttemp = json.objectForKey("main")! ["temp"] as! String
+                
+                //tempdata = Int(self.currenttemp)
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.dispLocation.text = self.currenttemp// * (9/5) - 459
@@ -128,12 +132,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         getLunarData()
         getLunarImage()
-        getWeatherData()
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        //locationManager.requestAlwaysAuthorization()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

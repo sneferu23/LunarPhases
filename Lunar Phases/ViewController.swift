@@ -47,7 +47,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
            
             do {
-                self.currentfracillum = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["fracillum"] as! String
+                let no = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)//MutableContainers
+                self.currentfracillum = no["fracillum"] as! String
                 self.currentlunarphase = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["curphase"] as! String
                 
                 dispatch_async(dispatch_get_main_queue()) {
@@ -110,8 +111,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let task = session.dataTaskWithRequest(request) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
-                self.currenttemp = json.objectForKey("main")! ["temp"] as! String
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [.MutableContainers])
+                print(json.objectForKey("main")! ["temp"])
+                
+                // Super Noah hack, I'm so sorry if you die reading this code(Extremely likely)
+                let regex = try! NSRegularExpression(pattern: "[0-9.]*", options: [])
+                let text = "\(json.objectForKey("main")! ["temp"])"
+                let match = regex.matchesInString(text, options: [], range: NSRange(location: 0, length: text.characters.count))[0]
+                
+                self.currenttemp = (text as NSString).substringWithRange(match.rangeAtIndex(0))
                 
                 //tempdata = Int(self.currenttemp)
                 

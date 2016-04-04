@@ -86,7 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        self.dispLocation.text = "Failed to retrieve your location"
+        self.dispLocation.text = "Failed to retrieve you're location"
         print("Failed to find user's location: \(error.localizedDescription)")
 
     }
@@ -112,22 +112,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             do {
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [.MutableContainers])
-                print(json.objectForKey("main")! ["temp"])
+                let a = json.objectForKey("main")!
+                let t = a["temp"] as! NSNumber
+                print(t)
                 
-                // Super Noah hack, I'm so sorry if you die reading this code(Extremely likely)
-                let regex = try! NSRegularExpression(pattern: "[0-9.]*", options: [])
-                let text = "\(json.objectForKey("main")! ["temp"])"
-                let match = regex.matchesInString(text, options: [], range: NSRange(location: 0, length: text.characters.count))[0]
-                
-                self.currenttemp = (text as NSString).substringWithRange(match.rangeAtIndex(0))
-                
-                //tempdata = Int(self.currenttemp)
                 
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.dispLocation.text = self.currenttemp// * (9/5) - 459
+                    self.dispLocation.text = String(Int(round(Double(t) * (9.0/5.0) - 459.0))) + "°"
                 }
             } catch {
-                let alert = UIAlertController(title: "Error", message: "You're bad", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "kikowaena loaa", message: "No wahi loaa", preferredStyle: UIAlertControllerStyle.Alert)
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
@@ -147,7 +141,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
-        //locationManager.requestAlwaysAuthorization()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

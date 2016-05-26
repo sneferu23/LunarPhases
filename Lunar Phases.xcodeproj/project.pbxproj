@@ -64,6 +64,7 @@
 		C19AD9631C9351CA00037664 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		C19AD9661C9351CA00037664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C19AD9681C9351CA00037664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1BBD0EB1CB82E0F009AF740 /* Lunar Phases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Lunar Phases.entitlements"; sourceTree = "<group>"; };
 		C1FD564D1C7F7A9B00A55B4D /* Lunar Phases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lunar Phases.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FD56501C7F7A9B00A55B4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1FD56521C7F7A9B00A55B4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		C1FD564F1C7F7A9B00A55B4D /* Lunar Phases */ = {
 			isa = PBXGroup;
 			children = (
+				C1BBD0EB1CB82E0F009AF740 /* Lunar Phases.entitlements */,
 				C1FD56501C7F7A9B00A55B4D /* AppDelegate.swift */,
 				C1FD56521C7F7A9B00A55B4D /* ViewController.swift */,
 				C1FD56541C7F7A9B00A55B4D /* Main.storyboard */,
@@ -276,6 +278,11 @@
 					C1FD564C1C7F7A9B00A55B4D = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 76JFQAA68J;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C1FD56601C7F7A9B00A55B4D = {
 						CreatedOnToolsVersion = 7.2;
@@ -534,11 +541,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Lunar Phases/Lunar Phases.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Lunar Phases/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-Phases";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -546,11 +557,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Lunar Phases/Lunar Phases.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "Lunar Phases/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.lsrhs.josephcaltabiano.Lunar-Phases";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

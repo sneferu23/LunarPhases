@@ -35,6 +35,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         return "\(components.month)/\(components.day)/\(components.year)"
     
     }
+
+   /* func getTime() {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        let hour = components.hour
+        let minutes = components.minute
+    } */
+    
     
     func getLunarData() {
         
@@ -47,7 +56,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
            
             do {
-                let no = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)//MutableContainers
+                let no = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                print(try NSJSONSerialization.JSONObjectWithData(data!, options: []))
                 self.currentfracillum = no["fracillum"] as! String
                 self.currentlunarphase = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)["curphase"] as! String
                 
@@ -57,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
             } catch {
-                let alert = UIAlertController(title: "Error", message: "Try Harder", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Error", message: "Can't get data", preferredStyle: UIAlertControllerStyle.Alert)
                 self.presentViewController(alert, animated: true, completion: nil)
             }
     
@@ -98,6 +108,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             lon = locations[0].coordinate.longitude
             
             getWeatherData()
+            
         } else {
             print("No locations")
         }
@@ -114,7 +125,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [.MutableContainers])
                 let a = json.objectForKey("main")!
                 let t = a["temp"] as! NSNumber
-                print(t)
+                
                 
                 
                 dispatch_async(dispatch_get_main_queue()) {
